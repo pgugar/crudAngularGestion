@@ -1,0 +1,27 @@
+<div class="big-container">
+
+  <div class="title-container">
+    <h1>Dashboard</h1>
+    <h2>--Gestión de Eventos--</h2>
+    <button (click)="irAInsertarEvento()" class="add-event-button">+ Añadir un evento</button>
+  </div>
+
+  <div class="lista-container">
+  <ul>
+    <li *ngFor="let evento of eventos" [ngClass]="{ 'activo': evento.activo, 'inactivo': !evento.activo }">
+      <p>ID: {{ evento.id }}</p> 
+      <p>Nombre: {{ evento.nombre }}</p> 
+      <p>Estado: {{ evento.activo ? 'Activo' : 'Inactivo' }}</p> 
+      <button (click)="verDetalles(evento.id)" class="see-more-button">Ver detalles</button>
+      <button (click)="editarDetalles(evento.id)" class="update-button">Editar detalles</button>
+      <div *ngIf="evento.activo" style="display:inline;">
+        <button (click)="borrarEvento(evento.id)" class="del-event-button">Eliminar evento</button>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>
+
+  
+
+  

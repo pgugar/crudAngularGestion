@@ -1,0 +1,15 @@
+<div class="delete-container">
+  <div *ngIf="mensaje">
+    {{ mensaje }}
+  </div>
+  
+  <h3>¿Estás seguro de que deseas eliminar el evento con ID: {{ id }}?</h3>
+  <p>Eliminar el evento no lo borrará de la base de datos,</p>
+  <p>desactivará el registro permanentemente.</p>
+  <button (click)="borrarEvento()" class="delete-button">Eliminar Evento</button>
+  </div>
+
+
+
+
+  
